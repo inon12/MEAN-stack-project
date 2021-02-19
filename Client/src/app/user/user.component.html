@@ -1,0 +1,19 @@
+
+<mat-card  [ngStyle]="taskComleted? {'border' : '2px solid green'} : {'border' : '2px solid red
+'} " (click)="SendIdToParent()" [style.background-color]="user.BackgroundColor">
+
+    Name: <input type="text" [(ngModel)]="user.Name" name="name"><br/>
+    Email: <input type="text" [(ngModel)]="user.Email" name="emzil"><br/>
+
+    <div *ngIf="flag" (click)="HideOtherData()">
+        Street: {{user.Street}}<br/>
+        Zipcode: {{user.Zipcode}}<br/>
+        City: {{user.City}}<br/>
+    </div>
+    <mat-card-actions>
+    <input type="button" value="Other Data" (mouseover)="presentOterData()">
+    <input type="button" value="Update" (click)="update()">
+    <input type="button" value="Delete" (click)="delete()">
+    </mat-card-actions>
+</mat-card>
+

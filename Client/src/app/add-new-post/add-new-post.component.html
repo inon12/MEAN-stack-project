@@ -1,0 +1,10 @@
+
+<form #f="ngForm" (ngSubmit)="addPost()">
+    Title: <input type="text" [(ngModel)] = "title" name="title">
+    Post : <input type="text" [(ngModel)]="body" name="body">
+    <input type="submit" value="Add"> &nbsp;
+    <input type="button" (click)="back()" value="Cancel">
+    
+</form>
+
+

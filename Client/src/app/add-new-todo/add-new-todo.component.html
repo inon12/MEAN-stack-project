@@ -1,0 +1,8 @@
+<p>add-new-todo works!</p>
+
+<form #f="ngForm" (ngSubmit)="addTask()">
+    <input type="text" [(ngModel)]="title" name="title"><br/>
+    <input type="button" value="cancel" (click)="back()">
+    <input type="submit" value="Add">
+</form>
+
