@@ -1,6 +1,6 @@
 <form #f="ngForm" (ngSubmit)="addUser()">
-    Name : <input type="text" [(ngModel)]="name" name="name"><br/>
-    Email : <input type="text" [(ngModel)]="email" name = "email"><br/>
-    <input type="submit" value="Add">
+    Name : <input required type="text" [(ngModel)]="name" name="name"><br/>
+    Email : <input required type="text" [(ngModel)]="email" name = "email"><br/>
+    <input [disabled]="!f.valid" type="submit" value="Add">
     <input type="button" value="Cancel">
 </form>
