@@ -1,4 +1,4 @@
-<h1>Posts</h1>
+Posts - User {{userid}}
 
 <input type="button" value="Add" [routerLink]="[{outlets :{posts : ['Add']}}]">
 <app-post *ngFor="let post of user.Posts" [post]="post"></app-post>

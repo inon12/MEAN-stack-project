@@ -1,7 +1,7 @@
 
 <mat-card  [ngStyle]="taskComleted? {'border' : '2px solid green'} : {'border' : '2px solid red
 '} " (click)="SendIdToParent()" [style.background-color]="user.BackgroundColor">
-
+    ID : {{this.user._id}}<br/>
     Name: <input type="text" [(ngModel)]="user.Name" name="name"><br/>
     Email: <input type="text" [(ngModel)]="user.Email" name="emzil"><br/>
 

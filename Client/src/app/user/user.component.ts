@@ -18,6 +18,7 @@ export class UserComponent implements OnInit {
 
   @Input()
   user : User = new User()
+  
 
 
   @Output()

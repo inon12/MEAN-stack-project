@@ -1,6 +1,5 @@
 
 
-<h1>Tasks</h1>
+<h3>Todos - User {{userid}}<input type="button" value="Add" [routerLink]="[{ outlets: { tasks: ['Add'] } }]"></h3>
 
-<input type="button" value="Add" [routerLink]="[{ outlets: { tasks: ['Add'] } }]">
 <app-task *ngFor="let tk of user.Tasks" [task]="tk" (editTask)="updateTask($event)"></app-task>
