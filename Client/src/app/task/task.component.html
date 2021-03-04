@@ -1,5 +1,5 @@
 
-<mat-card>
+<mat-card style="margin-bottom: 7px;border: 2px solid purple ;">
     {{task.Title}}&nbsp;&nbsp;<input type="button" value="Mark Compelted"  [style.visibility]="!task.Completed ? 'visible' : 'hidden'" (click)="markCompleted()"><br/>
     {{task.Completed}}<br/>
     <br/>
