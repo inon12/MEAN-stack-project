@@ -32,6 +32,8 @@ exports.getById = function (id)
             }
             else
             {
+                console.log(data)
+
                 resolve(data)
             }
         })
@@ -48,7 +50,8 @@ exports.addUser = function (newUserData)
                 Street : newUserData.Street,
                 Zipcode : newUserData.Zipcode,
                 Tasks : newUserData.Tasks,
-                Posts : newUserData.Posts
+                Posts : newUserData.Posts,
+                City : newUserData.City
             }
         )
 

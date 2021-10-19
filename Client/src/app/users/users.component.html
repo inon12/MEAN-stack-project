@@ -1,6 +1,0 @@
-<div >
-<input type="text" placeholder="Search" [(ngModel)]="searchDeatils" (ngModelChange)="search()"> 
-<input type="button" value="Add" (click)="AddUser()"><br/>
-<app-user *ngFor="let user of users" [user]="user" (notify)="userFromChild=$event" (click)="onSelectedUser(user)" [style.background-color]="user.BackgroundColor"></app-user><br/>
-</div>
-    

@@ -1,9 +1,0 @@
-<h1>New Todo – User {{id}}</h1>
-<div style="padding: 10px;;border: 2px solid black ;">
-<form #f="ngForm" (ngSubmit)="addTask()">
-    Title : <input required type="text" [(ngModel)]="title" name="title"><br/>
-    <input [disabled]="!f.valid" type="submit" value="Add">
-    <input type="button" value="cancel" (click)="back()">
-</form>
-</div>
-

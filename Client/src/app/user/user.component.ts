@@ -18,7 +18,6 @@ export class UserComponent implements OnInit {
 
   @Input()
   user : User = new User()
-  
 
 
   @Output()
@@ -29,6 +28,7 @@ export class UserComponent implements OnInit {
 
 
   ngOnInit(): void {
+        console.log(this.user.Name)
         this.user.Tasks?.forEach(item => {this.taskComleted= this.taskComleted&&item.Completed!})
   }
 
@@ -54,7 +54,7 @@ export class UserComponent implements OnInit {
   public SendIdToParent()
   {
 
-    this.router.navigate(['/user-deatils',this.user._id])
+    // this.router.navigate(['/user-deatils',this.user._id])
   }
   ngOnDestroy() : void
   {

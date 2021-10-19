@@ -11,9 +11,9 @@ import { UserUtilsService } from '../user-utils.service';
 })
 export class AddUserComponent implements OnInit {
 
-  name : String=""
-  email : String=""
-  sub1: Subscription = new Subscription;
+
+  newUser : User = new User();
+  sub1: Subscription;
   constructor(private utils : UserUtilsService,private router : Router) { }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class AddUserComponent implements OnInit {
 
   addUser()
   {
-    this.sub1 = this.utils.addUser(new User(this.name,this.email)).subscribe(data => 
+    this.sub1 = this.utils.addUser(this.newUser).subscribe(data => 
       {  
           this.router.navigate(['/']).then(data=>window.location.reload())
               

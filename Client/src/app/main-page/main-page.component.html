@@ -1,0 +1,23 @@
+
+<div style="display:flex;flex-direction: row;"> 
+    <mat-card  class="card_style">
+        <mat-card-content>
+            <mat-card-header>
+            <form #f=ngForm>
+                <input style="padding: 5px;" type="text" name= "search" placeholder="Search"   [(ngModel)]="searchDeatils" (keyup)="search()">
+                <button mat-raised-button color="primary" class="buttons" (click)="newUser()"> New User </button>
+            </form>
+          </mat-card-header>
+          <app-user *ngFor ="let user of users" [user]="user" class="buttons"  (click)="tasksAndPost(user)">
+          </app-user>
+        </mat-card-content>
+    </mat-card>
+    <div>
+        <mat-card *ngIf="addUser" class="card_style">
+            <app-add-user ></app-add-user>
+        </mat-card>
+    </div>
+    <div *ngIf="tasksAndPostsflag">
+        <app-tasks-and-posts [user]="tasksAndPostsUser"></app-tasks-and-posts>
+    </div>
+</div>

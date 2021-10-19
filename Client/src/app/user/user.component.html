@@ -1,20 +1,58 @@
 
-<mat-card  [ngStyle]="taskComleted? {'border' : '2px solid green'} : {'border' : '2px solid red
-'}" style="margin-bottom: 8px;" (click)="SendIdToParent()" [style.background-color]="user.BackgroundColor">
-    ID : {{this.user._id}}<br/> 
-    Name: <input type="text" [(ngModel)]="user.Name" name="name"><br/>
-    Email: <input type="text" [(ngModel)]="user.Email" name="emzil"><br/>
-
-    <input type="button" value="Other Data" (mouseover)="presentOterData()">
-    <div *ngIf="flag" (click)="HideOtherData()" style="border: solid 2px black;background-color: gray;">
-        Street: {{user.Street}}<br/>
-        Zipcode: {{user.Zipcode}}<br/>
-        City: {{user.City}}<br/>
-    </div>
+<mat-card  [ngStyle]="taskComleted? {'border' : '1px solid green'} : {'border' : '1px solid red
+'} "  [style.background-color]="user.BackgroundColor">
+<mat-card-content>
+    <table>
+        <tr>
+            <th>
+                Name:
+            </th>
+            <td>
+                <input type="text" [(ngModel)]="user.Name" name="name">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Email:
+            </th>
+            <td>
+                <input type="text" [(ngModel)]="user.Email" name="emzil">
+            </td>
+        </tr>
+    </table>
     <mat-card-actions>
-    
-    <input type="button" value="Update" (click)="update()">
-    <input type="button" value="Delete" (click)="delete()">
-    </mat-card-actions>
+    <button mat-raised-button color="primary"  value="Other Data" (mouseover)="presentOterData()" class="buttons" [ngStyle]="{'margin-right' : '30px'}">Other Data</button>
+    <button mat-raised-button color="accent"  value="Update" (click)="update()" class="buttons">Update</button>
+    <button mat-raised-button color="warn"  value="Delete" (click)="delete()" class="buttons">Delete</button>
+    </mat-card-actions >
+    <div *ngIf="flag" (click)="HideOtherData()">
+        <table>
+            <tr>
+                <th>
+                    Street:
+                </th>
+                <td>
+                    <input type="text" [(ngModel)] = user.Street > 
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Zipcode:
+                </th>
+                <td>
+                    <input type= text [(ngModel)] = user.Zipcode name="zipcode">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    City:
+                </th>
+                <td>
+                    <input type= text [(ngModel)] = user.City name="city">
+                </td>
+            </tr>
+        </table>    
+    </div>
+</mat-card-content>
 </mat-card>
 

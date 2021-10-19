@@ -12,6 +12,7 @@ let TaskItemSchema = new appSchema({
             Name : String,
             Email : String,
             Street : String,
+            City : String,
             Zipcode : Number,
             Tasks : [
                         {

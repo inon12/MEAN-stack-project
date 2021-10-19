@@ -1,0 +1,39 @@
+<div style="display:flex;flex-direction: row;" > 
+    <mat-card class="card_style">
+        <h1>{{user.Name}} Posts</h1>
+            <app-post *ngFor="let post of user.Posts" [post]="post"></app-post>
+            <button mat-raised-button color="primary" class="buttons" (click)= "addNewPost= true" >Add Post</button>
+            <mat-card *ngIf="addNewPost">
+                <form #f="ngForm" (ngSubmit)="addPost()">
+                    <table>
+                        <tr>
+                            <th>Title:</th>
+                            <td><input type="text" name="title" [(ngModel)]="title"></td>
+                        </tr>
+                        <tr>
+                            <th>Body:</th>
+                            <td>
+                            <textarea  name="body" [(ngModel)]="body" cols="30" rows="5"></textarea>
+                            </td>
+                            
+                        </tr>
+                    </table>
+                    <button mat-raised-button color="primary" class="buttons" type="submit">Upload Post</button>
+                    <button mat-raised-button color="warn" class="buttons" (click)="restAddPostForm();addNewPost=false" >Cancel</button>
+                </form>
+            </mat-card>
+    </mat-card>
+    <mat-card class="card_style" >
+        <h1>{{user.Name}} Tasks</h1>
+            <app-task *ngFor="let task of user.Tasks" [task]="task" ></app-task>
+            <button mat-raised-button color="primary" class="buttons" (click)="addNewTask =true" >Add Task</button>
+                <mat-card *ngIf="addNewTask">
+                <form #f="ngForm" (ngSubmit)="addTask()">
+                    Title: <input type="text" name="taskTitle" [(ngModel)]="taskTitle">
+                    <button mat-raised-button color="primary" class="buttons" type="submit">Upload Task</button>
+                    <button mat-raised-button color="warn" class="buttons" (click)="restAddTaskForm()" >Cancel</button>
+                </form>
+            </mat-card>
+    </mat-card>
+    
+<div>

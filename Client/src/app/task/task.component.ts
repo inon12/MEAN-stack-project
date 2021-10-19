@@ -10,17 +10,25 @@ export class TaskComponent implements OnInit {
 
   constructor() { }
 
+  taskStatus : String="Set Completed";
   @Input()
   task : Task = new Task()
 
   
   @Output()
   editTask : EventEmitter<Task> = new EventEmitter()
-  ngOnInit(): void {}
+  ngOnInit(): void 
+  {
+    if(this.task.Completed)
+    {
+      this.taskStatus="Well Done";
+    }
+  }
   markCompleted()
   {
     this.task.Completed=true;
     this.editTask.emit(this.task)
+    this.taskStatus="Well Done";
    
   }
 

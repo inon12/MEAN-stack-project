@@ -1,6 +1,0 @@
-
-
-<h3>Todos - User {{userid}}<input type="button" value="Add" [routerLink]="[{ outlets: { tasks: ['Add'] } }]"></h3>
-<div style="border: solid 2px black; padding: 8px;">
-<app-task *ngFor="let tk of user.Tasks" [task]="tk" (editTask)="updateTask($event)"></app-task>
-</div>
